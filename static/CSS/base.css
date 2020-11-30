@@ -1,9 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: gray;
+    font-size: 62.5%; #which is standart
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    width: 900px;
+    font-size: 1.6em;
+    margin: 0 auto;
+    background-color: white;
+}
 p {
     padding: 0 0 1em 0;  #top right bottom left
 }
 
 main {
     padding: 2em;
+    position: relative;
 }
 
 .art-img {

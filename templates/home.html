@@ -1,6 +1,13 @@
-<h1>Articles</h1>
-
+{% extends 'base.html' %} #extends the base.html file to here
+{% block content %}
+<main>
 {% for article in all_articles_list %}
+<section>
 <h3>{{ article.title }}</h3>
+<article>
 <p>{{ article.text }}</p>
+</article>
+</section>
 {% endfor %}
+</main>
+{% endblock content %}
