@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import settings
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-urlpatterns = [
+urlpatterns = [        # sometimes this can get kind of poor and kind of hard to read memory
     path('admin/', admin.site.urls),
     path('', include('articles.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()       #you can add patterns either this way or other way
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

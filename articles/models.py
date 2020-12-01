@@ -9,6 +9,7 @@ class Article(models.Model):
         on_delete = models.CASCADE,     #If this object deleted, than delete all references
         default=1,                      #Because We have already article inside of it, main superuser
         )       
+    photo = models.ImageField(upload_to="gallary", default='drop-bear.jpg')
     
     def __str__(self):
         return self.title

@@ -26,6 +26,8 @@ main {
 .art-img {
     float: left;
     margin: 10px;
+    height: 100px;
+    weight: 100px;
 }
 
 h3{
