@@ -6,6 +6,10 @@
         <link href="{% static 'css/base.css' %}" rel="stylesheet">
     </head>
     <body>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'new_article' %}">New</a></li>
+        </ul>
         <div class="wrapper">
         {% block content %}
         {% endblock content %}
