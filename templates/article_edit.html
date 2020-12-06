@@ -1,0 +1,8 @@
+{% extends 'base.html' %} #extends the base.html file to here
+{% block content %}
+<h3>Edit Article</h3>
+<form action="" method="post">{% csrf_token %}  <!-- This going to protect us against cross site scripting attacks -->
+{{ form.as_p }}        <!-- Create a form inside a pragraph tag -->
+    <input type="submit" value="Update" class="btn btn-primary btn-bg" />
+</form>
+{% endblock content %}

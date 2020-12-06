@@ -43,7 +43,7 @@ a:link {
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: none;  /* get rid of the bullet */
   margin: 0;
   padding: 0;
   overflow: hidden;

@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, UpdateView
 from django.views.generic.edit import CreateView
 from .models import Article
 
@@ -14,5 +14,9 @@ class ArticleDetailView(DetailView):
 class ArticleCreateView(CreateView):
     model = Article
     template_name = 'new_article.html'
-    fields = ['title', 'atuhor', 'text', 'photo' ] # Sometimes for security reasons os can block adding photos
+    fields = ['title', 'author', 'text', 'photo' ] # Sometimes for security reasons os can block adding photos
     
+class ArticleUpdateView(UpdateView):
+    model = Article
+    template_name = 'article_edit.html'
+    fields = ['title', 'text' ]  
