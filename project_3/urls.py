@@ -21,6 +21,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [        # sometimes this can get kind of poor and kind of hard to read memory
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')), 
+    path('accounts/', include('accounts.urls')),  # this would cause an error if you had your server running over there, before this created
     path('', include('articles.urls')),
 ]
 

@@ -10,8 +10,18 @@
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'new_article' %}">New Article</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% endif %}
         </ul>
         <div class="wrapper">
+            {% if user.is_authenticated %}
+                <p>Hi {{ user.username }}</p>
+            {% else %}
+                <p>You are not logged in 
+                <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Log In</a>
+                <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Sign Up</a></p>
+            {% endif %}   <!--Don't forget to to close if -->
         {% block content %}
         {% endblock content %}
         </div>

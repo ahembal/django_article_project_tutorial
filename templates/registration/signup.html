@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>New User SIgn Up</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!--Django form created inside of paragraph tag-->
+    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+</form>
+{% endblock content %}
