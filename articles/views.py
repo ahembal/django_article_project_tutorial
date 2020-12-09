@@ -1,6 +1,7 @@
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from django.views.generic.edit import CreateView
 from .models import Article
+from django.urls import reverse_lazy
 
 class HomePageView(ListView):
     model = Article
@@ -20,3 +21,8 @@ class ArticleUpdateView(UpdateView):
     model = Article
     template_name = 'article_edit.html'
     fields = ['title', 'text' ]  
+
+class ArticleDeleteView(DeleteView):
+    model = Article
+    template_name = 'article_delete.html' 
+    success_url = reverse_lazy('home') # redirect to home page after it's deleted
